@@ -4,6 +4,7 @@
 const DESTINATAIRE_EMAIL = "biyongdelbrique@gmail.com";
 // Config : ton adresse pour recevoir sa réponse
 const ADRESSE_RETOUR_EMAIL = "ton-adresse@gmail.com";
+const INVITATION_URL = "https://delbrique.github.io/invitation-interactive/";
 
 const isReplyMode = new URLSearchParams(window.location.search).get("reply") === "1";
 
@@ -153,7 +154,7 @@ function fillRecap(plan) {
   } else {
     recipient = DESTINATAIRE_EMAIL;
     subject = encodeURIComponent("Une petite enveloppe pour toi ❤️");
-    const invitationUrl = new URL(window.location.href);
+    const invitationUrl = new URL(INVITATION_URL);
     invitationUrl.searchParams.set("reply", "1");
     invitationUrl.hash = "";
     body = encodeURIComponent(
