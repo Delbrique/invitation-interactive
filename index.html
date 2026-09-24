@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Une question pour toi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="scene">
+
+  <!-- ÉTAPE 0 : ENVELOPPE -->
+  <section class="stage" id="stage-envelope" aria-live="polite">
+    <button class="envelope" id="envelope" aria-label="Ouvrir la lettre">
+      <span class="envelope__seal">♥</span>
+      <span class="envelope__flap"></span>
+      <span class="envelope__body"></span>
+    </button>
+    <p class="hint">clique sur l'enveloppe</p>
+  </section>
+
+  <!-- ÉTAPE 1 : LA QUESTION -->
+  <section class="stage stage--hidden" id="stage-question">
+    <div class="letter">
+      <p class="letter__eyebrow">J'ai quelque chose à te dire</p>
+      <h1 class="letter__title">Tu veux te mettre en couple avec moi&nbsp;?</h1>
+      <p class="letter__sub" id="taunt">Tu me plais beaucoup, et j'aimerais qu'on soit plus que des amis.</p>
+
+      <div class="buttons" id="buttonRow">
+        <button class="btn btn--yes" id="btn-yes">Oui, je veux&nbsp;!</button>
+        <button class="btn btn--no" id="btn-no">Non</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 2 : LE PLAN -->
+  <section class="stage stage--hidden" id="stage-plan">
+    <div class="letter letter--wide">
+      <p class="letter__eyebrow">C'est décidé</p>
+      <h1 class="letter__title letter__title--sm">Alors, sortons ensemble</h1>
+      <p class="letter__sub">Raconte-moi comment tu imagines notre premier moment à deux.</p>
+
+      <form id="planForm" class="plan-form" novalidate>
+        <label class="field">
+          <span>Ton prénom, pour que je puisse sourire en le lisant</span>
+          <input type="text" name="name" id="name" placeholder="Ton joli prénom" required>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Le jour de notre moment</span>
+            <input type="date" name="date" id="date" required>
+          </label>
+          <label class="field">
+            <span>L'heure où je viens te chercher</span>
+            <input type="time" name="time" id="time" required>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Notre idée de moment</span>
+          <select name="place" id="place">
+            <option value="Un dîner rien que tous les deux">Un dîner rien que tous les deux</option>
+            <option value="Une balade au coucher du soleil">Une balade au coucher du soleil</option>
+            <option value="Un pique-nique romantique">Un pique-nique romantique</option>
+            <option value="Un film et beaucoup de câlins">Un film et beaucoup de câlins</option>
+            <option value="Surprends-moi, mon coeur">Surprends-moi, mon coeur</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Un petit mot pour moi</span>
+          <textarea name="message" id="message" rows="3" placeholder="Ce que tu ressens, ce que tu espères, ou juste un petit coeur..."></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--yes btn--wide">Préparer notre moment à deux</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ÉTAPE 3 : RÉCAPITULATIF -->
+  <section class="stage stage--hidden" id="stage-recap">
+    <div class="letter">
+      <p class="letter__eyebrow">C'est noté</p>
+      <h1 class="letter__title letter__title--sm">C'est officiel entre nous</h1>
+
+      <dl class="recap">
+        <div class="recap__row"><dt>Avec</dt><dd id="recapName">—</dd></div>
+        <div class="recap__row"><dt>Quand</dt><dd id="recapWhen">—</dd></div>
+        <div class="recap__row"><dt>Où</dt><dd id="recapWhere">—</dd></div>
+        <div class="recap__row recap__row--msg" id="recapMsgRow">
+          <dt>Message</dt><dd id="recapMsg">—</dd>
+        </div>
+      </dl>
+
+      <a href="#" id="mailBtn" class="btn btn--yes btn--wide" target="_blank" rel="noopener">Envoyer l'enveloppe par Gmail</a>
+      <p class="letter__footnote">À très vite.</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
