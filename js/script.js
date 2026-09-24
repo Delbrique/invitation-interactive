@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 const DESTINATAIRE_EMAIL = "biyongdelbrique@gmail.com";
 // Config : ton adresse pour recevoir sa réponse
-const ADRESSE_RETOUR_EMAIL = "ton-adresse@gmail.com";
+const ADRESSE_RETOUR_EMAIL = "valentinbiyong2@gmail.com";
 const INVITATION_URL = "https://delbrique.github.io/invitation-interactive/";
 
 const isReplyMode = new URLSearchParams(window.location.search).get("reply") === "1";
