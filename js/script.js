@@ -1,7 +1,6 @@
 // ------------------------------------------------------------------
-// Config : adresse de la personne qui reçoit l'enveloppe
+// L'adresse du destinataire est choisie directement dans Gmail.
 // ------------------------------------------------------------------
-const DESTINATAIRE_EMAIL = "biyongdelbrique@gmail.com";
 // Config : ton adresse pour recevoir sa réponse
 const ADRESSE_RETOUR_EMAIL = "valentinbiyong2@gmail.com";
 const INVITATION_URL = "https://raw.githack.com/Delbrique/invitation-interactive/main/index.html";
@@ -152,7 +151,7 @@ function fillRecap(plan) {
     );
     mailBtn.textContent = "Envoyer ma réponse par Gmail";
   } else {
-    recipient = DESTINATAIRE_EMAIL;
+    recipient = "";
     subject = encodeURIComponent("Une petite enveloppe pour toi ❤️");
     const invitationUrl = new URL(INVITATION_URL);
     invitationUrl.searchParams.set("reply", "1");
